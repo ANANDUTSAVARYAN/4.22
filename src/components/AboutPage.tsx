@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Users, Globe, BookOpen, Heart, Target } from 'lucide-react'
+import { Shield, Users, Globe, BookOpen, Heart, Target, Award, Lightbulb, Crown, Star } from 'lucide-react'
 import { VanguardScene } from './3D/VanguardScene'
 
 export const AboutPage: React.FC = () => {
@@ -27,48 +27,48 @@ export const AboutPage: React.FC = () => {
     }
   }
 
-  const theoryOfChangeItems = [
+  const vanguardPrinciples = [
     {
-      icon: BookOpen,
-      title: "Education rooted in purpose",
-      description: "Dexterity believes that the purpose of education is leadership — leadership at home, leadership in community, leadership in a particular field or discipline, leadership for the country and the world.",
+      icon: Shield,
+      title: "Leadership through Discipline",
+      description: "Vanguard candidates develop unwavering discipline as the foundation of effective leadership. Through structured training and self-mastery, they learn to lead by example and inspire others through their commitment to excellence.",
+      color: "red"
+    },
+    {
+      icon: Award,
+      title: "Merit-based Excellence",
+      description: "Every achievement in Vanguard is earned through merit. We believe that true leadership emerges when individuals consistently demonstrate excellence, integrity, and dedication to their growth and service to others.",
       color: "blue"
     },
     {
       icon: Heart,
-      title: "Leadership rooted in service",
-      description: "Dexterity enables young people to identify \"servant leadership\" as the goal of their education. Dexterity alumni — as true servant leaders — dedicate their lives to serve people and solve pressing problems.",
-      color: "red"
-    },
-    {
-      icon: Target,
-      title: "The Opportunity Superhighway",
-      description: "If you do not know that an opportunity exists, you do not get that opportunity. Dexterity Global believes in and has pioneered the concept of an \"Opportunity Superhighway\" to reach opportunities to children and youth directly in their classrooms, homes and phones.",
+      title: "Sacrifice for the Greater Good",
+      description: "Vanguard leaders understand that true greatness comes through sacrifice - putting the needs of others and the nation before personal gain. This principle shapes servant leaders who dedicate their lives to solving pressing problems.",
       color: "green"
     },
     {
       icon: Globe,
-      title: "The gap between education and leadership",
-      description: "Through an ecosystem of educational programs, Dexterity Global is inspiring and enabling India's young generation to bridge the gap between their education and leadership — by putting their education to use to solve problems and serve people in real world.",
+      title: "Nation-building Vision",
+      description: "Inspired by Dexterity Global's mission, Vanguard candidates are groomed to become nation-builders who bridge the gap between education and leadership, working together to serve India and solve global challenges.",
       color: "yellow"
     },
     {
       icon: Users,
-      title: "Local Role Models",
-      description: "Dexterity believes in building local role models whose example can increase the levels of aspiration and achievement among young people from similar backgrounds, living in similar or nearby towns or villages.",
+      title: "Collaborative Leadership",
+      description: "Vanguard emphasizes that the greatest achievements come through collective effort. Our candidates learn to work together, leveraging diverse strengths to create solutions that no individual could achieve alone.",
       color: "purple"
     },
     {
-      icon: Shield,
-      title: "For every child, not just a few",
-      description: "Dexterity Global is recognized for pioneering a financial aid policy \"Pay only if you can.\" The policy ensures that all students irrespective of their socioeconomic background, family income or pin code get access to all Dexterity Global programs. More than 85% of Dexterity alumni come from low-income families and receive financial aid.",
+      icon: Lightbulb,
+      title: "Innovation in Service",
+      description: "We encourage creative problem-solving and innovative approaches to age-old challenges. Vanguard leaders use their education as a tool for transformation, developing new ways to serve people and communities.",
       color: "indigo"
     }
   ]
 
-  const dexterity10 = [
-    "Independent Thinking", "Research", "Communication", "Leadership", "Empathy",
-    "Fearlessness", "Public Service", "Nation-building", "Scientific Temperament", "Spiritual Grounding"
+  const vanguardValues = [
+    "Discipline", "Merit", "Sacrifice", "Leadership", "Service",
+    "Innovation", "Excellence", "Integrity", "Collaboration", "Nation-building"
   ]
 
   return (
@@ -103,7 +103,8 @@ export const AboutPage: React.FC = () => {
                   { name: 'HOME', href: '/' },
                   { name: 'ABOUT', href: '/about', active: true },
                   { name: 'VISION', href: '/vision' },
-                  { name: 'PROGRAMS', href: '/programs' }
+                  { name: 'PROGRAMS', href: '/programs' },
+                  { name: 'DOCS', href: '/documentation' }
                 ].map((item) => (
                   <motion.a
                     key={item.name}
@@ -131,17 +132,61 @@ export const AboutPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <motion.div
+              className="w-20 h-20 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-red-500/30"
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(220, 38, 38, 0.3)",
+                  "0 0 40px rgba(220, 38, 38, 0.5)",
+                  "0 0 20px rgba(220, 38, 38, 0.3)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <Crown className="w-10 h-10 text-red-400" />
+            </motion.div>
+            
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">About Vanguard</h1>
+            
             <div className="bg-gradient-to-br from-black/60 to-red-900/30 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-500/20">
               <blockquote className="text-2xl md:text-3xl font-bold text-white leading-relaxed mb-6">
-                "If India has to grow, a generation of young Indians will have to bridge the gap between classroom education and global leadership."
+                "Vanguard represents the pinnacle of leadership development - where <span className="text-red-400">Discipline</span>, <span className="text-red-400">Merit</span>, and <span className="text-red-400">Sacrifice</span> converge to create tomorrow's nation-builders."
               </blockquote>
               <cite className="text-red-300 text-lg font-semibold">
-                Sharad Sagar, Founder and CEO, The Dexterity Global Group
+                The Vanguard Leadership Philosophy
               </cite>
             </div>
           </motion.div>
 
-          {/* The Dexterity Theory of Change */}
+          {/* What is Vanguard */}
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="bg-gradient-to-br from-black/40 to-red-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-500/20">
+              <h2 className="text-4xl font-bold text-white mb-8 text-center">What is Vanguard?</h2>
+              <div className="max-w-4xl mx-auto">
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  Vanguard is an elite leadership development program inspired by the <span className="font-bold text-red-400">Dexterity Global</span> vision of creating servant leaders. 
+                  We represent the cutting edge of educational transformation, where young minds are shaped into future nation-builders through a 
+                  rigorous curriculum rooted in timeless values.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  Our program goes beyond traditional education by instilling a deep sense of purpose, fostering collaborative leadership, 
+                  and developing the courage to tackle the world's most pressing challenges. Every Vanguard candidate is trained to be a 
+                  local role model whose example can inspire and elevate entire communities.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Through semi-monastic discipline and merit-based excellence, Vanguard candidates learn that true leadership is not about 
+                  personal achievement, but about service to others and dedication to the greater good.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* The Vanguard Principles */}
           <motion.div 
             className="mb-20"
             variants={containerVariants}
@@ -152,24 +197,24 @@ export const AboutPage: React.FC = () => {
               className="text-4xl font-bold text-white text-center mb-16"
               variants={itemVariants}
             >
-              The Dexterity Theory of Change
+              The Vanguard Principles
             </motion.h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {theoryOfChangeItems.map((item, index) => (
+              {vanguardPrinciples.map((principle, index) => (
                 <motion.div
-                  key={item.title}
+                  key={principle.title}
                   className="bg-gradient-to-br from-black/40 to-gray-900/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-500/20 hover:border-red-500/30 transition-all duration-500"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <motion.div 
-                    className={`w-16 h-16 bg-${item.color}-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 border border-${item.color}-500/30 relative`}
+                    className={`w-16 h-16 bg-${principle.color}-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 border border-${principle.color}-500/30 relative`}
                     animate={{
                       boxShadow: [
-                        `0 0 20px rgba(${item.color === 'blue' ? '59, 130, 246' : item.color === 'red' ? '220, 38, 38' : item.color === 'green' ? '34, 197, 94' : item.color === 'yellow' ? '234, 179, 8' : item.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.3)`,
-                        `0 0 40px rgba(${item.color === 'blue' ? '59, 130, 246' : item.color === 'red' ? '220, 38, 38' : item.color === 'green' ? '34, 197, 94' : item.color === 'yellow' ? '234, 179, 8' : item.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.5)`,
-                        `0 0 20px rgba(${item.color === 'blue' ? '59, 130, 246' : item.color === 'red' ? '220, 38, 38' : item.color === 'green' ? '34, 197, 94' : item.color === 'yellow' ? '234, 179, 8' : item.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.3)`
+                        `0 0 20px rgba(${principle.color === 'blue' ? '59, 130, 246' : principle.color === 'red' ? '220, 38, 38' : principle.color === 'green' ? '34, 197, 94' : principle.color === 'yellow' ? '234, 179, 8' : principle.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.3)`,
+                        `0 0 40px rgba(${principle.color === 'blue' ? '59, 130, 246' : principle.color === 'red' ? '220, 38, 38' : principle.color === 'green' ? '34, 197, 94' : principle.color === 'yellow' ? '234, 179, 8' : principle.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.5)`,
+                        `0 0 20px rgba(${principle.color === 'blue' ? '59, 130, 246' : principle.color === 'red' ? '220, 38, 38' : principle.color === 'green' ? '34, 197, 94' : principle.color === 'yellow' ? '234, 179, 8' : principle.color === 'purple' ? '147, 51, 234' : '99, 102, 241'}, 0.3)`
                       ]
                     }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
@@ -179,18 +224,18 @@ export const AboutPage: React.FC = () => {
                       transition={{ duration: 0.6 }}
                       className="absolute inset-0 rounded-2xl"
                     />
-                    <item.icon className={`w-8 h-8 text-${item.color}-400 relative z-10`} />
+                    <principle.icon className={`w-8 h-8 text-${principle.color}-400 relative z-10`} />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-4">{principle.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{principle.description}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Dexterity 10 */}
+          {/* Vanguard Values Grid */}
           <motion.div 
-            className="bg-gradient-to-br from-black/40 to-red-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-500/20"
+            className="bg-gradient-to-br from-black/40 to-red-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-500/20 mb-20"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -199,20 +244,22 @@ export const AboutPage: React.FC = () => {
               className="text-4xl font-bold text-white text-center mb-8"
               variants={itemVariants}
             >
-              Dexterity 10 — The Core of a Dexterity Education
+              The Vanguard Values
             </motion.h2>
             
             <motion.p 
               className="text-gray-300 text-center mb-12 max-w-4xl mx-auto leading-relaxed text-lg"
               variants={itemVariants}
             >
-              Dexterity grooms leaders with semi-monastic, semi-military values — enabling them to identify servant leadership as the purpose of their education. Dexterity imparts an education rooted in purpose and builds leadership rooted in service, so that the education, life and work of our young people become the answer to the problems that the world faces. Dexterity 10 comprises of four key skills, two core values, two core commitments and two guiding forces.
+              These ten core values form the foundation of every Vanguard candidate's development. 
+              They represent the essential qualities needed to become a servant leader who can 
+              bridge the gap between education and real-world impact.
             </motion.p>
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {dexterity10.map((item, index) => (
+              {vanguardValues.map((value, index) => (
                 <motion.div
-                  key={item}
+                  key={value}
                   className="bg-red-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-red-500/30 hover:bg-red-500/30 transition-all duration-300 relative"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
@@ -224,23 +271,103 @@ export const AboutPage: React.FC = () => {
                   />
                   <div className="relative z-10">
                     <div className="text-3xl font-bold text-red-400 mb-2">{index + 1}</div>
-                    <div className="text-white font-semibold text-sm">{item}</div>
+                    <div className="text-white font-semibold text-sm">{value}</div>
                   </div>
                 </motion.div>
               ))}
             </div>
+          </motion.div>
 
-            <motion.div 
-              className="text-center mt-12"
-              variants={itemVariants}
-            >
-              <blockquote className="text-xl font-bold text-white mb-4">
-                "The Big Investments of tomorrow need not be on the Stock Exchange. They need to be in our schools."
-              </blockquote>
-              <cite className="text-red-300 font-semibold">
-                Sharad Sagar, Founder and CEO, The Dexterity Global Group
-              </cite>
-            </motion.div>
+          {/* Connection to Dexterity Global */}
+          <motion.div 
+            className="bg-gradient-to-br from-black/40 to-blue-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-blue-500/20 mb-20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="text-center">
+              <motion.div 
+                className="w-20 h-20 bg-blue-500/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8 mx-auto border border-blue-500/30"
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(59, 130, 246, 0.3)",
+                    "0 0 40px rgba(59, 130, 246, 0.5)",
+                    "0 0 20px rgba(59, 130, 246, 0.3)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Globe className="w-10 h-10 text-blue-400" />
+              </motion.div>
+              
+              <h3 className="text-3xl font-bold text-white mb-6">Inspired by Dexterity Global</h3>
+              <p className="text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed text-lg">
+                Vanguard is proudly inspired by <span className="font-bold text-blue-400">Dexterity Global's</span> revolutionary 
+                approach to education and leadership development. We embody their core belief that education should be rooted in purpose 
+                and leadership should be rooted in service.
+              </p>
+              
+              <div className="bg-blue-500/10 rounded-2xl p-8 border border-blue-500/20">
+                <blockquote className="text-xl font-bold text-white mb-4">
+                  "If India has to grow, a generation of young Indians will have to bridge the gap between classroom education and global leadership."
+                </blockquote>
+                <cite className="text-blue-300 font-semibold">
+                  Sharad Sagar, Founder and CEO, The Dexterity Global Group
+                </cite>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Our Mission */}
+          <motion.div 
+            className="bg-gradient-to-br from-black/40 to-purple-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-purple-500/20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="text-center">
+              <motion.div 
+                className="w-20 h-20 bg-purple-500/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8 mx-auto border border-purple-500/30"
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(147, 51, 234, 0.3)",
+                    "0 0 40px rgba(147, 51, 234, 0.5)",
+                    "0 0 20px rgba(147, 51, 234, 0.3)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              >
+                <Star className="w-10 h-10 text-purple-400" />
+              </motion.div>
+              
+              <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
+              <p className="text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed text-lg">
+                To develop a generation of <span className="font-bold text-purple-400">servant leaders</span> who will use their education 
+                not for personal gain, but to serve people and solve the pressing problems of our world. Every Vanguard graduate becomes 
+                a beacon of hope and a catalyst for positive change in their communities and beyond.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 mt-12">
+                {[
+                  { icon: Target, title: "Purpose-Driven Education", desc: "Learning with clear intent to serve" },
+                  { icon: Users, title: "Collaborative Impact", desc: "Working together for greater good" },
+                  { icon: Crown, title: "Excellence in Service", desc: "Leading through example and sacrifice" }
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    className="bg-purple-500/10 rounded-2xl p-6 border border-purple-500/20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <item.icon className="w-8 h-8 text-purple-400 mx-auto mb-4" />
+                    <h4 className="font-bold text-white mb-2">{item.title}</h4>
+                    <p className="text-gray-400 text-sm">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
